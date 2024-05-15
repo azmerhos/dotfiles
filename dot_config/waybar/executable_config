@@ -1,0 +1,56 @@
+[{
+	"layer": "top",
+	"position": "left",
+	"width": 56,
+	"modules-left": ["clock", "custom/date", "sway/workspaces"],
+	"modules-center": ["sway/window"],
+	"modules-right": ["image"],
+	"sway/window": {
+		"rotate": 90,
+	},
+	"clock": {
+		"format": "{:%H:%M}",
+	},
+	"custom/date": {
+		"format": "{}",
+		"exec": "date \"+%D\"",
+		"interval": 9000,
+	},
+},
+{
+	"layer": "top",
+	"position": "bottom",
+	"height": 48,
+	"spacing": 15,
+	"modules-left": ["image"],
+	"modules-center": ["custom/username"],
+	"modules-right": ["tray", "network", "pulseaudio", "upower"],
+	"upower": {
+		"icon-size": 26,
+		"tooltip": true,
+		"tooltip-spacing": 20,
+	},
+	"network": {
+		"format": "get the fuck out",
+		"format-wifi": "ᯤ ({signalStrength}%)",
+		"tooltip-format": "IP: {ipaddr} \n{essid} from {gwaddr}",
+		"on-click": "iwgtk",
+	},
+	"tray": {
+		"icon-size": 26,
+		"spacing": 10,
+	},
+	"pulseaudio": {
+		"format": "🔊 {volume}%",
+		"on-click": "pavucontrol",
+	},
+	"custom/username":{
+		"format": "{}",
+		"exec": "echo $USER@$HOSTNAME",
+	},
+	"image": {
+		"exec": "/home/killian/.config/iconSwitch.sh",
+		"size": 54,
+		"on-click": "./home/killian/.config/iconSwitch.sh",
+	},
+}]
